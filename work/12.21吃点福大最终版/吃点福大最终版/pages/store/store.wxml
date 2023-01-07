@@ -1,0 +1,44 @@
+<!--pages/restaurant/restaurant.wxml-->
+
+<view class="card-container">
+  <wxs module="filters" src="/pages/store/test5.wxs"></wxs>
+  <view class="cards">
+    <view class="card">
+      <text class="txtname">店名：{{datas.drName}}</text>
+    </view>
+    <view class="card">
+      <text class="txtaddress">地址：{{datas.drAddress}}</text>
+    </view>
+    <view class="socre">
+      <text class="txtsocre">评分：{{datas.score}}</text>
+    </view>
+  </view>
+  
+  <view class="card-pic">
+    <image class="imgcard" mode="aspectFill" src="{{datas.imgcard}}"/>
+  </view>
+</view>
+<view class="restaurantContainer">
+  <block wx:for="{{dishes}}" wx:for-item="item" wx-key='*this' data-index='{{index}}'> 
+      <view class="dishContainer">
+        <view class="photoContainer">
+          <image class="dishPhoto" mode="aspectFill" src="{{item.photo}}"/>
+        </view>
+        <view class="dish">
+          <view class="dishName">
+            <text class="txtName">菜名：{{item.name}}</text>
+          </view>
+          <view class="dishPrice">
+            <text class="txtprice">评分：{{filters.toFix(item.foodvalue)}}</text>
+          </view>
+          <view class="dishPrice">
+            <text class="txtprice">价格：￥{{item.price}}元</text>
+          </view>
+        </view>
+      <view class="grade" catchtap="onTapGrade" data-foodid='{{item.foodid}}' data-foodname='{{item.name}}' data-foodprice='{{item.price}}'
+      data-store='{{datas.drName}}'>
+        <text class="txtgrade">分数></text>
+      </view>
+  </view>
+</block>
+</view>

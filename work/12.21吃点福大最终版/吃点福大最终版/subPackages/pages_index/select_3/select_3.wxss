@@ -1,0 +1,59 @@
+/* pages/index/select_3/select_3.wxss */
+.button1 {
+  position: fixed;
+  bottom: 90rpx;
+  left: 0;
+  right: 0;
+  text-align: center; 
+  color: rgb(70, 69, 69);
+  width: 90%; 
+  font-size: 36rpx;
+ background-color: rgb(233, 176, 128);
+ height: 84rpx;
+ line-height: 84rpx;
+}
+.button1.button-hover { /*按钮按压效果*/
+  background-color: #BC955E;
+}
+
+.tui-table-view{
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: 22rpx;
+}
+
+ .tui-col-3{
+  flex: 0 0 auto;
+   width: 25%;
+   text-align: center;
+   color: #797979;
+   font-size: 24rpx;
+
+ }
+ 
+/*标签按钮*/
+.sign-setting-border{
+  margin-left: 2%;
+  width:22%;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #999999;
+  font-size: 14px;
+  text-align: center;
+  font-family: -apple-system;
+  margin-bottom:15px;
+  border:1px solid #DBDBDB;
+  }
+/*选中后的标签样式*/
+.selected{
+  background-color: rgb(233, 176, 128);
+  color: rgb(70, 69, 69);
+  border:1px solid rgb(233, 176, 128);
+}

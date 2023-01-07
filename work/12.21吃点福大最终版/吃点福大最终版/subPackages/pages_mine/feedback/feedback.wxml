@@ -1,0 +1,40 @@
+<view class="feadback">
+  <view class="user_text">
+      <!--<view>系统反馈</view>
+      <view class="backbtn" bindtap="backClick">{{'<'}}返回</view>-->
+  </view>
+  <!-- type -->
+
+          <view wx:if='{{!active}}'>
+            <view class="title">
+                请描述您要反馈的问题
+            </view>
+            <view class="problem">
+                
+                <view class="type_item {{currentIndex == index ? 'active' : ''}}" wx:for="{{questionList}}" wx:key="{{index}}" data-index="{{index}}" bindtap='activeClick'>{{item}}</view>
+            </view>
+            <view class="textarea">
+                <textarea bindblur="bindTextAreaBlur" placeholder="请描述您的问题我们将尽快解决" />
+            </view>
+            <!-- phone -->
+            <view class="title">
+                请输入您的联系方式
+            </view>
+      <view class="line"></view>
+      <view class="phone">
+          <view class="phone_lable">联系人</view>
+          <input class="weui-input" bindblur="get_name" name="联系人" placeholder="联系人" />
+      </view>
+      <view class="phone">
+          <view class="phone_lable">联系方式</view>
+          <input class="weui-input" bindblur="get_phone" name="联系方式" placeholder="请输入联系方式" />
+      </view>
+      <view class="submit" bindtap="submit">
+          提交反馈
+      </view>
+  </view>
+  <view class="complete" wx:if="{{active}}">
+      <view>感谢您的反馈，</view>
+      <view>您的支持是我最大的动力</view>
+  </view>
+</view>

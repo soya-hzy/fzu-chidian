@@ -1,0 +1,62 @@
+<!--pages/index/search/search.wxml-->
+<block wx:for="{{list}}" wx:key="">   <!--利用wx:if判断，只输出一个结果-->
+  <wxs module="filters" src="/subPackages/pages_index/search/test6.wxs"></wxs>
+  <view class="box1">
+  <view class="box1-list" >
+    <!--图片-->
+    <view bindtap="dish" data-item="{{item[0]}}" data-dishid="{{item[0].Food[0].id}}"  class="box1-list-photo">
+      <image src="{{item[0].Food[0].photo}}"></image>
+    </view>
+    <!--菜品相关-->
+    <view  bindtap="dish" data-item="{{item[0]}}" data-dishid="{{item[0].Food[0].id}}"  class="box1-list-text">
+      <view class="box1-list-text-tit1">菜名：{{item[0].Food[0].name}}</view>
+      <view class="box1-list-text-tit2">店名：{{item[0].store[0].name}}</view>
+      <view class="box1-list-text-tit3">地址：{{item[0].store[0].address}} </view>
+    </view> 
+  <!--取消推荐、分数、收藏-->
+    <view class="box1-list-other">
+      <!--取消推荐-->
+      <mp-icon  bindtap="openConfirm" style="float: right; margin-right: 10rpx;" type="outline" icon="close2" color="black" size="{{18}}"></mp-icon>
+      <!----分数---->
+      <view style="padding-top: 50rpx;" class="box1-list-other-tit1"> {{filters.toFix(item[0].Food[0].value)}} </view>
+      <!--点亮/熄灭红心-->
+      <view wx:if="{{islike[item[0].Food[0].id]==true}}">
+        <!-- <view wx:if="{{item.liked==true}}">-->
+          <view bindtap="choosedislike" data-liked="{{islike[item[0].Food[0].id]}}" data-dishid="{{item[0].Food[0].id}}">
+            <view>
+              <image
+                style="z-index:300; width: 47rpx; height: 47rpx;float: left; margin-left:20rpx; margin-top: 60rpx;"
+                src="{{iconlikeSucceed}}"></image>
+            </view>
+            <!--<view class="{{islike[item.data.Food[0].id]==false? 'active':''}}"></view>-->
+            <view class="{{islike[item[0].Food[0].id]==false? 'active':''}}"></view>
+          </view>
+        </view>
+        <view wx:else>
+          <view bindtap="chooselike" data-liked="{{islike[item[0].Food[0].id]}}" data-dishid="{{item[0].Food[0].id}}">
+          <!--<view bindtap="chooselike" data-liked="{{item.liked}}" data-dishid="{{item.data.Food[0].id}}">-->
+            <image
+              style="z-index:300; width: 47rpx; height: 47rpx; float: left; margin-left: 20rpx; margin-top: 60rpx;"
+              src="{{iconlike}}"></image>
+          </view>
+        </view>
+    </view>
+    <!--特点栏-->
+    <view class="box1-feature">
+      <view wx:for="{{item[0].tedian}}" class="box1-feature-btn">
+        {{item.tagname }}
+      </view>
+
+  </view>
+  </view>
+  </view>
+</block>
+
+
+
+ 
+
+<!--取消推荐弹窗-->
+<mp-dialog  title="不喜欢" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" >
+  <view style="font-size: 34rpx;">以后将不再为您推荐此菜品</view>
+</mp-dialog>

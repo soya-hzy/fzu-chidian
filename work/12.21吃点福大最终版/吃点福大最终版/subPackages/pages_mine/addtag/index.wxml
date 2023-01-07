@@ -1,0 +1,8 @@
+<!--pages/index/select_3/select_3.wxml-->
+<scroll-view scroll-y="true" style="height:800rpx; border-radius: 20rpx; width: 90%; border :thin solid #BBBBBB; margin-top: 80rpx; margin-left: 36rpx; background-color: white;" bindscrolltoupper="upperFunction" bindscrolltolower="lowerFunction"> 
+
+  <view style="width: 100%; margin-top: 20rpx; text-align: center; font-size: 34rpx; color: #797979;"  >标签</view>
+   <view class="sign-setting-border {{item.checked ?'selected':''}}" wx:for="{{arraytags}}" wx:key="{{index}}" bindtap='switchtags'  data-index='{{index}}'>{{item.name}}</view>
+</scroll-view>
+
+<button bindtap="submit"class="button1">完成</button>

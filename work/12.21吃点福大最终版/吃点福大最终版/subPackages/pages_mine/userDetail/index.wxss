@@ -1,0 +1,32 @@
+/* pages/mine/userDetail/index.wxss */
+.userDetail{
+  width: 100vw;
+  height: 100vh;
+}
+.form-content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.submit_button{
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10vh;
+}
+.form_table{
+  display: flex;
+  align-items: center;
+  /* margin: 20rpx 10rpx; */
+  padding: 20rpx 10rpx;
+  margin: 2vh 0;
+  font-size: 30rpx;
+  border: 2rpx solid #ccc;
+  border-top: 0;
+}
+.form_input{
+  width: 30%;
+}
+.submit{
+  background: #E9B080;
+}

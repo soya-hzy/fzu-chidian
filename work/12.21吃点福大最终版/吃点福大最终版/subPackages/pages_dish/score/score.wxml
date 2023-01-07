@@ -1,0 +1,24 @@
+<!--pages/ping/ping.wxml-->
+<!--<view class="daohang" style="width: 800rpx; height: 100rpx; display: block; box-sizing: border-box">
+  <button class="a1" form-type='submit' plain='true' bindtap='last'  style="position: relative; left: -325rpx; top: 5rpx; width: 150rpx; height: 108rpx; display: block; box-sizing: border-box"> <image src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221115154250825-229674237.png' mode='widthFix' style="position: relative; left: 0rpx; top: 7rpx"></image></button>
+  <text class="d2" style="position: relative; left: 99rpx; top: -91rpx">菜品</text>
+  </view>-->
+  <view  class="first" style="width: 676rpx; height: 212rpx; display: block; box-sizing: border-box">
+    <view class="box" style="width: 738rpx; height: 240rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 0rpx">
+      <view class="f-a" style="margin-left: 10rpx; position: relative; left: 48rpx; top: 16rpx; width: 362rpx; height: 106rpx; display: block; box-sizing: border-box">{{foodname}}</view>
+      <view class="f-b" style="background-color: white; margin-left: 40rpx; margin-top: 20px; position: relative; left: -182rpx; top: 94rpx; width: 362rpx; height: 92rpx; display: block; box-sizing: border-box">{{currentFood.store[0].name}}</view>
+    </view>
+  </view>
+  <view class="tuijian" style="background-color: white; width: 716rpx; height: 345rpx; display: flex; box-sizing: border-box; position: relative; left: 18rpx; top: 60rpx">
+    <text class="t1" style="position: relative; left: 0rpx; top: 73rpx">推荐指数</text>
+    <van-rate style="width: 339rpx; height: 79rpx; display: block; box-sizing: border-box; position: relative; left: -25rpx; top: 93rpx"
+    value="{{ value }}"
+    size="{{ 35 }}"
+    color="#F5C27F"
+    void-icon="star"
+    void-color="#999"
+    bind:change="onChange"
+  />
+  </view>
+  <button class="test" bindtap="submit" data-index="{{index}}" style="position: relative; left: -1rpx; top: 156rpx; width: 260rpx; height: 131rpx; display: flex; box-sizing: border-box">发布评分</button>
+  

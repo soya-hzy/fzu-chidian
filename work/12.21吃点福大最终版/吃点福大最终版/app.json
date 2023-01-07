@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/select/select",
+    "pages/mine/mine",
+    "pages/store/store",
+    "pages/logs/logs"
+  ],
+  "subPackages":[
+    {
+      "root":"subPackages/pages_index", 
+      "name":"index",  
+      "pages":[			
+        "search/search",
+        "selectstore/selectstore",
+        "select_1/select_1",
+        "select_3/select_3",
+        "select_3 result/select_3 result"
+      ],
+      "independent":false   
+    },
+    {
+      "root":"subPackages/pages_dish", 
+      "name":"dish",  
+      "pages":[			
+        "dish/dish",     
+        "score/score"
+      ],
+      "independent":false   
+    },
+    {
+      "root":"subPackages/pages_mine", 
+      "name":"mine",  
+      "pages":[			
+        "like/like",     
+        "collect/collect",
+        "feedback/feedback",
+        "addtag/index",
+        "userDetail/index"
+      ],
+      "independent":false   
+    }
+    
+  ],
+
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E9B080",
+    "navigationBarTitleText": "吃点福大",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "DE8F27",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/home1.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/Options1.png",
+        "iconPath": "images/Options.png",
+        "pagePath": "pages/select/select",
+        "text": "筛选"
+      },
+      {
+        "selectedIconPath": "images/user1.png",
+        "iconPath": "images/user.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

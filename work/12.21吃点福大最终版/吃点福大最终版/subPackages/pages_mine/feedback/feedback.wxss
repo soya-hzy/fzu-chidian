@@ -1,0 +1,78 @@
+/* pages/mine/feedback/feedback.wxss */
+.user_text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  font-size:48rpx;
+  color: #fff;
+  background: #eeb085;
+  border: 1px solid #ccc;
+  margin-bottom: 20rpx;
+}
+.title{
+    font-size: 42rpx;
+    padding-left: 20rpx;
+    margin-bottom: 20rpx;
+}
+.problem{
+    display: flex;
+    flex-wrap: wrap;
+}
+.problem .type_item{
+    padding: 10rpx 16rpx;
+    margin: 20rpx;
+    border: 1px solid #ccc;
+    border-radius: 20rpx;
+}
+.textarea{
+    margin: 20rpx;
+    height: 20vh;
+    border-radius: 20rpx;
+    border: 2rpx solid #ccc;
+}
+.textarea textarea{
+    height: 100%;
+    width: 100%;
+}
+.line{
+  margin-top: 20rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+.phone{
+    display: flex;
+    align-items: center;
+    /* margin: 20rpx 10rpx; */
+    padding: 20rpx 10rpx;
+    font-size: 30rpx;
+    border: 2rpx solid #ccc;
+}
+.phone_lable{
+    width: 30%;
+}
+.active{
+    background: #eeb085;
+}
+.weui-input{
+    margin-left: 30rpx;
+}
+.submit{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:80rpx;
+    padding: 20rpx 16rpx;
+    font-size: 40rpx;
+    color: #000;
+    border-radius: 20rpx;
+    border: 1px solid #ccc;
+    background: #eeb085;
+}
+.complete{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 40rpx;
+}

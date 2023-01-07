@@ -1,0 +1,13 @@
+{ "component": true,
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  },
+      "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "吃点福大",
+      "navigationBarTextStyle":"black"
+  
+      
+      
+  }

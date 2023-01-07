@@ -1,0 +1,19 @@
+/* pages/mine/like/like.wxss */
+.like{
+    padding-bottom: constant(safe-area-inset-bottom); 
+    padding-bottom: env(safe-area-inset-bottom);  
+}
+.user_text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20rpx;
+    font-size: 48rpx;
+    color: #fff;
+    background: #eeb085;
+    border: 1px solid #ccc;
+    margin-bottom: 20rpx;
+  }
+  .backbtn{
+      padding: 10rpx;
+  }

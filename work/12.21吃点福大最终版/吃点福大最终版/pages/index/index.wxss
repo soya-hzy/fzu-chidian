@@ -1,0 +1,213 @@
+/**index.wxss**/
+/*授权*/
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+  font-size: 36rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+  font-size: 32rpx;
+
+}
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+  
+  color:#9d9d9d ;
+  background-color: rgb(222, 176, 128);
+}
+/*圆形图片*/
+.circle{
+  border-radius: 100%;
+  overflow: hidden;
+  width: 75rpx;
+  height: 75rpx;
+}
+.circle img{
+  height: 100%;
+}
+/*实现6*2宫格*/
+.tui-table-view{
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.tui-col-1{
+ flex: 0 0 auto;
+  width: 50%;
+  text-align: justify;
+  color: #797979;
+  font-size: 36rpx;
+}
+.tui-col-2{
+  flex: 0 0 auto;
+   width: 20%;
+   text-align: justify;
+   color: #797979;
+
+   font-size: 26rpx;
+ }
+ .tui-col-3{
+  flex: 0 0 auto;
+   width: 16.6667%;
+   text-align: center;
+   color: #797979;
+   font-size: 24rpx;
+ }
+ .tui-h-1{
+  padding: 30rpx 0;
+ }
+ .tui-h-2{
+  margin-top: -8px;
+
+ }
+ .photosize{    /*图片尺寸*/
+  width:80rpx; 
+  height:80rpx; 
+}
+
+/*随机栏*/
+.randombar{
+  margin-top: 24rpx;
+  margin-left: 18rpx;
+  margin-right: 18rpx;
+  border-radius: 24rpx;
+  background-color: white;
+}
+.button1{         /*选择按钮*/
+  text-align:center;
+  background-color:#FBD49D;
+  color: #797979;
+  font-size: 27rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 70rpx;
+
+  
+}
+.button1.button-hover { /*按钮按压效果*/
+  background-color: #BC955E;
+}
+
+
+/*****************************************/
+.box1{   /*整个结果盒子*/
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding-bottom: 16rpx;
+  background-color: white;
+  border-radius: 24rpx;
+}
+.box1-list{   /*结果文本图片*/
+  width: 100%;
+  height: 250rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.box1-list-photo{ /*单条结果照片*/
+  width: 30%;
+  height: 70%;
+  float: left;
+  margin-top: 24rpx;
+  margin-left: 24rpx;
+}
+.box1-list-photo image{
+  width: 100%;
+  height: 100%;
+}
+.box1-list-text{    /*单条结果文字部分*/
+  margin-left: 26rpx;
+  float: left;
+  width: 47%;
+  height: 84%;
+}
+.box1-list-text-tit1{  /*菜名*/
+  flex: 0 0 auto;
+  white-space: normal;   /*自动换行*/
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-top: 25rpx;
+  height: 54rpx;
+  width: 96%;
+  line-height: 50rpx;
+}
+.box1-list-text-tit2{  /*店名*/
+  flex: 0 0 auto;
+  white-space: normal;
+  width: 100%;
+  height:40rpx ;
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+}
+.box1-list-text-tit3{ /*地址*/
+  flex: 0 0 auto;
+  white-space: normal;
+  width: 100%;
+  height:50rpx ;
+  font-size: 24rpx;
+  color: rgb(136, 136, 136);
+}
+.box1-list-other{ /*评分收藏取消*/
+  float: right;
+  float: inline-start;
+
+  width:15%;
+}
+.box1-list-other-tit1{  /*评分*/
+  white-space: normal;
+  margin-left: 16rpx;
+  width: 100%;
+  height:40rpx ;
+  font-size: 32rpx;
+  color: rgb(222, 143, 39);
+}
+.box1-feature{ /*特点*/
+  float: left;
+  width: 100%;
+  margin-left: 42rpx;
+  margin-top: 8rpx;
+  height: 50rpx;
+  
+}
+.box1-feature-btn{ /*特点按钮*/
+  width: 88rpx;
+  height:44rpx;
+  border:1px solid  rgb(222, 143, 39);
+  background-color: rgb(222, 143, 39);
+  font-size: 25rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  line-height:44rpx;
+  float: left;
+  margin-right: 40rpx;
+  color: rgb(222, 143, 39);
+  background-color:white;
+}

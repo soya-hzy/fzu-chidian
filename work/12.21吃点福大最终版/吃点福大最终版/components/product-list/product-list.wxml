@@ -1,0 +1,70 @@
+<view class="product-list">
+  <wxs module="filters" src="/components/product-list/test1.wxs"></wxs>
+  <view class="list_item">
+      <view class="item_img">
+        <block wx:if="{{productType == 'like'}}">
+          <image src="{{item.data.Food[0].photo}}"></image>
+          </block>
+          <block wx:else>
+            <image src="{{item.data[0].photo}}"></image>
+          <!-- <image src="{{item.data.store[0].photo}}"></image> -->
+            </block>
+      </view>
+      <view class="list_item_details">
+          <view class="details_text">
+              <view class="title">
+                <block wx:if="{{productType == 'like'}}">
+                <text class="titleName">店名:{{item.data.Food[0].name}}</text>
+                  </block>
+                  <block wx:else>
+                    <text class="titleName">店名:{{item.data[0].name}}</text>
+                  </block>
+              </view>
+              <view class="shopName">
+                  <block wx:if="{{productType == 'like'}}">
+                    菜品:{{item.data.store[0].name}}
+                      </block>
+                      <block wx:else>
+                        地址:{{item.data[0].address}}
+                        <!-- {{item.data.sort}} -->
+                      </block>
+              </view>
+              <view class="address">
+                <block wx:if="{{productType == 'like'}}">
+                  地址:{{item.data.store[0].address}}
+                  </block>
+                  <block wx:else>
+                  电话:{{item.data[0].phone}}
+                  </block>
+              </view>
+          </view>
+          <view class="fraction">
+              <view class="fraction_text">
+            {{filters.toFix(item.data.Food[0].value) || filters.toFix(item.data.point[0].value)}}
+              </view>
+              <view class="fraction_img" bindtap="handleClick">
+              <block wx:if="{{productType == 'like'}}">
+                  <image wx:if="{{false}}" src='cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/love.png'></image>
+                  <image wx:if="{{true}}" src='cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/love1.png'></image>
+              </block>
+              <block wx:if="{{productType == 'collect'}}">
+                  <image wx:if="{{false}}" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/star.png"></image>
+                  <image wx:if="{{true}}" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/star1.png"></image>
+              </block>
+              </view>
+          </view>
+      </view>
+      <view class="close" bindtap='deleteClick'>
+          <image src="/images/Close_Circle.png"></image>
+      </view>
+  </view>
+  <!-- tabs -->
+  <view class="tabs_box">
+      <block wx:if="{{productType == 'like'}}">
+      <view class="tabs_item" wx:for="{{item.data.tedian}}">{{item.tagname}}</view>
+        </block>
+        <block wx:else>
+          <view class="tabs_item"> {{item.data[0].sort}}</view> 
+        </block>
+  </view>
+</view>

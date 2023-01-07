@@ -1,0 +1,29 @@
+<view class="tabModal">
+    <view class="modal_content">
+     <view class="content_box">
+      <view class="modal_header">
+        <view class="title">{{title}}</view>
+        <view class="close_icon" bindtap="closeModal">
+          <image src="/images/Close_Circle.png"></image>
+        </view>
+      </view>
+      <view wx:if='{{isDelete}}'>
+        点击标签即可删除
+      </view>
+      <view class="content">
+        <view class="item" wx:for="{{tagList}}" wx:key='{{item.id}}' 
+        data-index="{{index}}"
+        bindtap="delitem">{{item.name}}</view>
+      </view>
+      <!-- options -->
+      <view class="footer_box">
+       <view class="btn_box">
+        <view class="addbtn" bindtap="addtags">添加</view>
+        <view class="delete" bindtap='deletetags'>
+        {{isDelete?'完成删除':'删除'}}
+        </view>
+       </view>
+      </view>
+     </view>
+    </view>
+</view>

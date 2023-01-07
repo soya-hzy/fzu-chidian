@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#E9B080",
+  "navigationBarTitleText": "搜索结果",
+  "navigationBarTextStyle":"black",
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  }
+}

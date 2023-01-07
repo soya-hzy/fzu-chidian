@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#E9B080",
+      "navigationBarTitleText": "系统反馈",
+      "navigationBarTextStyle":"black"
+}

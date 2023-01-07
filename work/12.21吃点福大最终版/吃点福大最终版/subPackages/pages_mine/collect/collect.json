@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "product-list":"/components/product-list/product-list"
+    },
+    "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#E9B080",
+      "navigationBarTitleText": "收藏的店",
+      "navigationBarTextStyle":"black"
+  }

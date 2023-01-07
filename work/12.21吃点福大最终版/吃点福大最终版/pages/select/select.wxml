@@ -1,0 +1,108 @@
+<!-- pages/select/select.wxml -->
+<!-- 顶部标签部分 -->
+<view class="diningRoom">
+  <view class="restaurant" catchtap="onTapLeft">
+    <text class="title">选择餐厅▼</text>
+  </view>
+  <view class="restaurant" catchtap="onTapRight">
+    <text class="title">选择标签▼</text>
+  </view>
+</view>
+<!--防止详情进入顶部标签下面-->
+<view class="foil"></view>
+<!-- 页面详情 -->
+<block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" wx:key='id'>
+  <!-- 主题展示部分 -->
+  <view class="restaurant-datail" catchtap="onTapStore" data-storeid='{{item.id}}'>
+    <view class="datail-top">
+      <image class="img" src="{{item.photo}}" mode="aspectFill"></image>
+      <view class="diningCard">
+        <view class="dining-name">
+          <text class="title">{{item.name}}</text>
+        </view>
+        <view class="d-b">
+          <view class="dining-datail">
+            <view class="dining-addr">
+              <text class="text">{{item.address}}</text>
+            </view>
+            <view class="dining-addr">
+              <text class="text">{{item.phone}}</text>
+            </view>
+        </view>
+        <view class="collect">
+        <view>
+          <text>评分{{item.value}}</text>
+        </view>
+        <!-- 收藏 -->
+        <view class="img-wrap" catchtap="onTapCollect" data-restaurantid='{{item.id}}' data-index="{{idx}}" data-checked='{{item.checked}}'>
+          <image class="img-collect" wx:if="{{item.checked}}" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/star1.png"/>
+          <image class="img-collect" wx:else src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/star.png"/>
+        </view>
+      </view>
+        </view>
+      </view>
+      <!-- 不喜欢 -->
+      <view class="dislike" catchtap="onTapDislike" data-restaurantid='{{item.id}}'>
+        <image class="ico" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/Close_Circle.png"></image>
+      </view>
+      </view>
+    <!-- 商家特点 -->
+    <view class="datail-bottom">
+      <block  wx:for="{{item.sort}}" wx:for-item="item" wx:key='*this'>
+      <view class="flavour">
+        <text class="t">{{item}}</text>
+      </view>
+      </block>
+    </view>
+  </view>
+</block>
+<!--遮罩-->
+<view hidden="{{leftselected}}" class="placeholder"></view>
+<!-- 选中上方左侧选项，跳出下方选项框 -->
+<view hidden="{{leftselected}}" class="selectRoom">
+  <!-- 下方选项框 -->
+  <view class="prompt">
+    <view class="label">
+      <text class="labeltxt">请选择你想要的餐厅</text>
+    </view>
+    <view class="cancel" catchtap="onTapLeftCancel" wx:if="{{nothingl}}">
+      <image class="ico" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/Close_Circle.png"></image>
+    </view>
+    <view class="cancel" catchtap="onTapLeftSubmit" wx:else>
+    <image class="ico" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/wx_icon_submit.png"></image>
+    </view>
+  </view>
+  <!-- 显示标签 -->
+  <view class="whois">
+    <block wx:for="{{diningRooms}}" wx:for-item="item" wx:key="*this">
+      <view class="flavour {{item.show?'back_active':''}}" data-index="{{index}}" catchtap="onTapRooms">
+        <text class="{{item.show?'word_active':''}}">{{item.room}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!--遮罩-->
+<view hidden="{{rightselected}}" class="placeholder"></view>
+<!-- 选中上方右侧选项，跳出下方选项框 -->
+<view hidden="{{rightselected}}" class="selectRoom">
+  <!-- 下方显示框 -->
+  <view class="prompt">
+    <view class="label">
+      <text class="labeltxt">请选择你想要的标签</text>
+    </view>
+    <view class="cancel" catchtap="onTapRightCancel" wx:if="{{nothingr}}">
+      <image class="ico" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/Close_Circle.png"></image>
+    </view>
+    <view class="cancel" catchtap="onTapRightSubmit" wx:else>
+    <image class="ico" src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/wx_icon_submit.png"></image>
+    </view>
+  </view>
+  <!-- 标签 -->
+  <view class="whois">
+    <block wx:for="{{foods}}" wx:for-item="item" wx:key='*this'>
+      <view class="flavour {{item.show?'back_active':''}}" data-index="{{index}}" catchtap="onTapFoods">
+        <text class="{{item.show?'word_active':''}}">{{item.word}}</text>
+      </view>
+    </block>
+  </view>
+</view>

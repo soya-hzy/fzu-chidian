@@ -1,0 +1,13 @@
+<view class="like">
+    <view class="user_text">
+      <!--  <view>喜欢的菜</view>
+        <view class="backbtn" bindtap="backClick">{{'<'}}返回</view>-->
+      </view>
+    <product-list wx:for="{{productList}}" wx:key="id" item="{{item}}"
+    data-index="{{index}}"
+    productType="like" bind:handleClick='handleClick'
+    bind:deleteClick='deleteClick'
+    >
+    </product-list>
+    <!-- bind:handleClick='handleClick' -->
+</view>

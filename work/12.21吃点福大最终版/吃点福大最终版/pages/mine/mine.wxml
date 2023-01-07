@@ -1,0 +1,70 @@
+<view class="my">
+  <view class="user_text">
+    <!-- 我的个人信息 -->
+  </view>
+  <view class="user_info">
+    <view class="active" wx:if="{{hasUserInfo}}">
+      <image
+        src="{{userInfo.avatarUrl}}"
+        alt="" />
+    </view>
+    <view class="user_info_details">
+      <view class="user_name" wx:if="{{hasUserInfo}}">
+      {{userInfo.nickName}}
+      </view>
+      <view class="user_details" wx:if="{{hasUserInfo}}"  bindtap='userDetail'>
+        <block wx:if="{{hasUserInfo}}">个人简介</block>
+        <button bindtap="login" wx:if="{{!hasUserInfo}}">点我登录</button>
+      </view>
+      <view class="user_details" wx:if="{{!hasUserInfo}}">
+        <button bindtap="login" wx:if="{{!hasUserInfo}}">点我登录</button>
+      </view>
+    </view>
+
+  </view>
+  <!-- icon -->
+  <view class="function_box">
+    <view class="items" bindtap="handleLike">
+      <view class="icon">
+        <image src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/love1.png"></image>
+      </view>
+      <view class="item_name">喜欢的菜</view>
+    </view>
+    <view class="items" bindtap="handleCollect">
+      <view class="icon">
+        <image src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/star1.png"></image>
+      </view>
+      <view class="item_name">收藏的店</view>
+    </view>
+    <view class="items" bindtap="handleFeedback">
+      <view class="icon">
+        <image src="cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/fankui.jpg"></image>
+      </view>
+      <view class="item_name">系统反馈</view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="tabs_box">
+    <view class="tabs_line" bindtap="openlike">
+      <view>喜欢的标签</view>
+      <view>></view>
+    </view>
+    <view class="tabs_line" bindtap="opentaboo">
+      <view>忌口的标签</view>
+      <view>></view>
+    </view>
+  </view>
+  <!-- modal -->
+  <tab-modal wx:if="{{liketabs}}" bind:close='close' title='你的喜欢' 
+  tagList='{{arraytags}}'
+  bind:addtags='addtags'
+  bind:delitem = "delitem"
+  bind:deletetags="deletetags"
+  ></tab-modal>
+  <tab-modal wx:if="{{taboo}}" bind:close='close' title='你的忌口'
+  tagList='{{tabooList}}'
+  bind:addtags='addtags2'
+  bind:delitem = "delitem2"
+  bind:deletetags="deletetags2"
+  ></tab-modal>
+</view>

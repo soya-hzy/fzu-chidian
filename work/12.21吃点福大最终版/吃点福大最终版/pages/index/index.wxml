@@ -1,0 +1,215 @@
+<!--index.wxml-->
+<view>
+  <!--首页内容-->
+  <!--搜索条-->
+  <wxs module="filters" src="/pages/index/test.wxs"></wxs>
+  <view class="box">
+    <view style="background-color:rgb(233, 176, 128);" class="cu-bar search bg-white">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <!--搜索框输入文字-->
+        <input type="text" placeholder="搜索" bindinput='searchinput' confirm-type="search"
+          value="{{inputValue}}"></input>
+        <text bindtap="clean" class="cuIcon-close"></text>
+      </view>
+      <view class="action">
+        <!--搜索按钮-->
+        <!--需要搜索	Search接口-->
+        <button bindtap="search" id="search"
+          style="width: 155rpx; background-color: rgb(245,245,245); color:rgb(155, 151, 151); "
+          class="cu-btn bg-green shadow-blur round">搜索</button>
+      </view>
+    </view>
+  </view>
+
+  <!--图标栏-->
+  <!--第一排-->
+  <view class="section">
+    <view class="tui-table-view">
+      <view class="tui-col-1">
+        <view style="margin-left: 38rpx; margin-top: -24rpx;">福大校园食堂</view>
+      </view>
+      <view class="tui-col-2 tui-h-1">
+        <!--筛选玫瑰园的店家-->
+        <!--需要筛选店铺的接口-->
+        <view>
+          <image bindtap="meigui" style=" width: 132rpx; height:132rpx; margin-top: -24rpx; margin-left: -24rpx;"
+            class="photosize"
+            src='cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/rose.png'>
+          </image>
+        </view>
+      </view>
+      <view class="tui-col-2 tui-h-1">
+        <!--筛选紫荆园的店家-->
+        <!--需要筛选店铺的接口-->
+        <view>
+          <image bindtap="zijing" style="width: 132rpx; height: 132rpx; margin-left: -24rpx;  margin-top: -24rpx;"
+            src='cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/zijing.png'>
+          </image>
+        </view>
+      </view>
+      <view class="tui-col-1 tui-h-3">
+        <view> </view>
+      </view>
+      <view style="margin-top: -61rpx;" class="tui-col-2">
+        <view>玫瑰园</view>
+      </view>
+      <view style="margin-top: -61rpx;" class="tui-col-2">
+        <view>紫荆园</view>
+      </view>
+      <!--第二排-->
+      <block>
+        <view wx:for="{{select_tag}}" wx:if="{{item.id<=6}}" class="tui-col-3">
+          <!--筛选店家-->
+          <!--需要	Tapdish 的接口-->
+          <!-- data-id="{{item.id}}" 传参数给js-->
+          <view>
+            <image bindtap="tagstore" data-id="{{item.id}}" class="photosize" src='{{item.tagphoto}}'></image>
+          </view>
+        </view>
+        <view wx:for="{{select_tag}}" wx:if="{{item.id<=6}}" class="tui-col-3">
+          <view class="tui-h-2">{{item.tagname}}</view>
+        </view>
+      </block>
+      <!--第三排-->
+      <block>
+        <view wx:for="{{select_tag}}" wx:if="{{item.id>6}}" class="tui-col-3">
+          <!--筛选店家-->
+          <!--需要	Tapdish 的接口-->
+          <view>
+            <image bindtap="tagstore" data-id="{{item.id}}" class="photosize" src='{{item.tagphoto}}'></image>
+          </view>
+        </view>
+        <view wx:for="{{select_tag}}" wx:if="{{item.id>6}}" class="tui-col-3">
+          <view class="tui-h-2">{{item.tagname}}</view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+
+  <!--随机栏-->
+  <view class="section randombar">
+    <view class="tui-table-view">
+      <view style="width: 20%;" class="tui-col-1">
+        <view style="margin-left: 24rpx;margin-top: 24rpx;">
+          <image style="width:140rpx; height: 126rpx;"
+            src='cloud://soya-fzu-rice-0grey0qla568ff6f.736f-soya-fzu-rice-0grey0qla568ff6f-1314877683/images/logo.png'>
+          </image>
+        </view>
+      </view>
+      <view style="font-weight: bold; font-size:34rpx; width: 70%; margin-top: -37rpx;" class="tui-col-2 tui-h-1">
+        今天吃什么?
+      </view>
+      <view style="margin-left: 280rpx; margin-top: -70rpx; font-weight: bold; font-size: 34rpx;  " class="tui-col-1">
+        <view> 来吃点福大帮您解决!</view>
+      </view>
+      <view style="padding-bottom: 24rpx; margin-top: 24rpx;margin-left: 36rpx; width: 40%;" class="tui-col-3">
+        <!--随机一款-->
+        <!--接口Randomdish-->
+        <button bindtap="select_1" style="height: 70rpx; width: 280rpx; line-height: 44rpx; text-align:center; "
+          class="button1">选择困难,随机一款</button>
+      </view>
+      <view style="margin-top: 24rpx; padding-bottom: 24rpx;" class="tui-col-3">
+        <!--随机三款-->
+        <!--接口	Random3dish-->
+        <button bindtap="select_3" style="height: 70rpx; width: 280rpx;line-height: 44rpx; margin-left:-216rpx;"
+          class="button1">有点想法,随机三款</button>
+      </view>
+    </view>
+  </view>
+
+  <!--热门推荐-->
+  <view style="margin-top: 30rpx; margin-left:30rpx;  font-size: 35rpx;">热门推荐</view>
+
+
+
+  <!---->
+  <mp-dialog title="不喜欢" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view style="font-size: 34rpx;">以后将不再为您推荐此菜品</view>
+  </mp-dialog>
+
+
+  <block>
+    <view wx:for="{{list}}"  class="box1">
+      <!--接口Dish1-->
+      <view class="box1-list" >
+        <!--图片-->
+        <view bindtap="dish" data-item="{{item}}" data-dishid="{{item.data.id}}" class="box1-list-photo">
+          <image src="{{item.data.photo}}"></image>
+        </view>
+        <!--菜品相关-->
+        <view bindtap="dish"  data-item="{{item}}" class="box1-list-text">
+          <view class="box1-list-text-tit1">菜名：{{item.data.name}}</view>
+          <view class="box1-list-text-tit2">店名：{{item.store[0].name}} </view>
+          <view class="box1-list-text-tit3">地址：{{item.store[0].address}} </view>
+        </view>
+        <!--取消推荐、分数、收藏-->
+        <view class="box1-list-other">
+          <!--取消推荐-->
+          <!--接口??-->
+          <mp-icon bindtap="openConfirm" style="float: right; margin-right: 10rpx;" type="outline" icon="close2"
+            color="black" size="{{18}}"></mp-icon>
+          <!----分数---->
+          <view style="padding-top: 50rpx;" class="box1-list-other-tit1"> {{filters.toFix(item.data.value)}} </view>
+          <!--点亮/熄灭红心-->
+          <!--接口17.	Dishlike-->
+          <view wx:if="{{islike[item.data.id]==true}}">
+          <!-- <view wx:if="{{item.liked==true}}">-->
+            <view bindtap="choosedislike" data-liked="{{islike[item.data.id]}}" data-dishid="{{item.data.id}}">
+              <view>
+                <image
+                  style="z-index:300; width: 47rpx; height: 47rpx;float: left; margin-left:20rpx; margin-top: 60rpx;"
+                  src="{{iconlikeSucceed}}"></image>
+              </view>
+              <!--<view class="{{islike[item.data.Food[0].id]==false? 'active':''}}"></view>-->
+              <view class="{{islike[item.data.id]==false? 'active':''}}"></view>
+            </view>
+          </view>
+          <view wx:else>
+            <view bindtap="chooselike" data-liked="{{islike[item.data.id]}}" data-dishid="{{item.data.id}}">
+            <!--<view bindtap="chooselike" data-liked="{{item.liked}}" data-dishid="{{item.data.Food[0].id}}">-->
+              <image
+                style="z-index:300; width: 47rpx; height: 47rpx; float: left; margin-left: 20rpx; margin-top: 60rpx;"
+                src="{{iconlike}}"></image>
+            </view>
+          </view>
+        </view>
+        <!--特点栏-->
+        <view class="box1-feature">
+          <view wx:for="{{item.data.tedian}}" class="box1-feature-btn">
+            {{item.tagname }}
+          </view>
+
+
+        </view>
+
+      </view>
+    </view>
+  </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

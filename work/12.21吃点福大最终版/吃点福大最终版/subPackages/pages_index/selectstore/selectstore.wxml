@@ -1,0 +1,62 @@
+<!--pages/index/selectstore/selectstore.wxml-->
+<!--pages/index/search/search.wxml-->
+ 
+
+
+  <block >
+    <view  wx:for="{{list}}" class="box1">   <!--商家信息-->       <!--接口2.	Storemessage-->
+    <view class="box1-list" >
+      <!--图片-->
+      <view bindtap="store" data-storeid='{{item.id}}' class="box1-list-photo">
+        <image src="{{item.photo}}"></image>
+      </view>
+      <!--菜品相关-->
+      <view bindtap="dish" class="box1-list-text">
+        <view class="box1-list-text-tit1">店名：{{item.name}}</view>
+        <view class="box1-list-text-tit2">地址：{{item.address}} </view>
+        <view class="box1-list-text-tit3">电话：{{item.phone}} </view>
+      </view> 
+    <!--取消推荐、分数、收藏-->
+      <view class="box1-list-other">
+     
+      <!--取消推荐-->
+      <mp-icon  bindtap="openConfirm" style="float: right; margin-right: 10rpx;" type="outline" icon="close2" color="black" size="{{18}}"></mp-icon>
+      <!----评分---->
+      <view style="padding-top: 50rpx;" class="box1-list-other-tit1">{{item.value}}</view>
+      <!--点亮/熄灭收藏五角星-->   <!--接口18.	Storerlike-->
+        <!--starSucceed=1表示收藏, =0表示没有收藏-->
+        <view wx:if="{{iscollect[item.id]==true}}">
+            <view bindtap="choosedislike" data-liked="{{item.checked}}" data-dishid="{{item.id}}">
+              <view>
+                <image
+                  style="z-index:300; width: 47rpx; height: 47rpx;float: left; margin-left:20rpx; margin-top: 60rpx;"
+                  src="{{iconstarSucceed}}"></image> </view>
+              <view class="{{item.checked==false? 'active':''}}"></view>
+            </view>
+          </view>
+          <view wx:else>
+            <view bindtap="chooselike" data-liked="{{item.checked}}" data-dishid="{{item.id}}">
+              <image
+                style="z-index:300; width: 47rpx; height: 47rpx; float: left; margin-left: 20rpx; margin-top: 60rpx;"
+                src="{{iconstar}}"></image>
+            </view>
+          </view>
+        </view>
+      <!--特点栏-->
+      <view  class="box1-feature">
+        <view class="box1-feature-btn" > 
+          {{item.sort}}
+        </view>  
+      </view>
+
+    </view>
+    </view>
+</block>
+
+
+
+
+<!--取消推荐弹窗-->
+<mp-dialog  title="不喜欢" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}" >
+  <view style="font-size: 34rpx;">以后将不再为您推荐此店铺</view>
+</mp-dialog>

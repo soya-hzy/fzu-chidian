@@ -1,0 +1,218 @@
+/* pages/select/select.wxss */
+@keyframes fadeIn {
+  from{opacity:0}
+  to{opacity:1}
+  }
+.text{
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  line-height: 100%;
+}
+.diningRoom{
+  background-color:rgb(233, 176, 128);
+  position: fixed;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 300;
+}
+.restaurant{
+  width: 40%;
+  height: 60rpx;
+  border: 1px solid rgb(155, 151, 151);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+.title{
+  line-height:60rpx;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+.t{
+  font-size: 1rem;
+  line-height: 50rpx;
+  color:rgb(233, 176, 128);
+}
+.foil{
+ width: 100%;
+ height: 100rpx;
+}
+.restaurant-datail{
+  z-index: 10;
+  border: solid 1px rgb(155, 151, 151);
+  margin-left: 25rpx;
+  margin-top:20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700rpx;
+  height: 400rpx;
+  -webkit-overflow-scrolling:touch;
+}
+.datail-top{
+  width: 700rpx;
+  height: 300rpx;
+  display: flex;
+  flex-direction: row;
+}
+.img{
+  width: 280rpx;
+  height: 280rpx;
+  margin: 10rpx;
+  z-index: -1;
+}
+.d-b{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.diningCard{
+  height: 300rpx;
+  width: 350rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.dining-name{
+  height: 100rpx;
+  width: 100%;
+  padding:20rpx 0 0 15rpx;
+}
+.dining-datail{
+  height: 200rpx;
+  width: 250rpx;
+}
+.dining-addr{
+  width: 100%;
+  height: 100rpx;
+  padding:20rpx 0 0 15rpx
+}
+.txtName{
+  line-height: 100rpx;
+  font-size: 20px;
+}
+.collect{
+  height: 200rpx;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.collect-txt{
+  margin-top: 35rpx;
+  height: 50rpx;
+  width: 80rpx;
+}
+.img-wrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  border: 2px solid #afafaf;
+}
+.img-collect{
+  height: 60rpx;
+  width: 60rpx;
+}
+.dislike{
+  width: 50rpx;
+  height: 300rpx;
+}
+.ico{
+  width: 50rpx;
+  height: 50rpx;
+}
+.datail-bottom{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 700rpx;
+  height: 100rpx;
+}
+.flavour{
+  width: auto;
+  height: 50rpx;
+  border: solid 1px rgb(233, 176, 128);
+  border-radius: 5px;
+  margin:20rpx 0 0 20rpx ;
+  padding:0 15rpx;
+}
+.flavourtxt{
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+.back_active{
+  background-color: #afafaf;
+}
+.word_active{
+  color: #fff;
+}
+.selectRoom{
+  background-color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 730rpx;
+  height: 500rpx;
+  margin: 0rpx 10rpx;
+  border: solid 1px rgb(233, 176, 128);
+  border-radius: 5px;
+  position: fixed;
+  bottom: 0rpx;
+  z-index: 200;
+  animation-name: fadeIn; 
+  animation-duration: 1s; 
+  animation-iteration-count: 1; 
+  animation-delay: 0s; 
+}
+.prompt{
+  width: 730rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid 2px rgb(233, 176, 128);
+}
+.label{
+  padding-left: 30rpx;
+  width: 630rpx;
+  height: 80rpx;
+}
+.labeltxt{
+  line-height: 80rpx;
+}
+.cancel{
+  width: 50rpx;
+  height: 50rpx;
+}
+.whois{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 690rpx;
+  height: 400rpx;
+}
+.placeholder{
+  z-index: 100;
+  position: fixed;
+  top:100rpx;
+  left: 1rpx;
+  width: 750rpx;
+  height: 688rpx;
+  background-color: #a3a3a3;
+  opacity: 0.5;
+}

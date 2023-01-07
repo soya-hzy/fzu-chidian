@@ -1,0 +1,160 @@
+<!--index.wxml-->
+<!--<view class="daohang">
+  <text class="d2" style="position: relative; left: 68rpx; top: 2rpx">菜品</text>
+  <button class="a1" form-type='submit' plain='true' bindtap='last'
+    style="position: relative; left: -290rpx; top: -75rpx; width: 133rpx; height: 79rpx; display: block; box-sizing: border-box">
+    <image src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221115154250825-229674237.png' mode='widthFix'
+      style="width: 49rpx; height: 50rpx; display: inline-block; box-sizing: border-box; position: relative; left: -21rpx; top: 4rpx">
+    </image>
+  </button>
+</view>-->
+<view class="first" style="width: 746rpx; height: 211rpx; display: block; box-sizing: border-box">
+  <view class="box" style="width: 740rpx; height: 212rpx; display: flex; box-sizing: border-box">
+    <view class="f-a"
+      style="margin-left: 60rpx; position: relative; left: -12rpx; top: 31rpx; width: 600rpx; height: 80rpx; display: block; box-sizing: border-box; background-color: white">
+      {{currentFood.data.name}}</view>
+      <!--<view class="f-a"
+      style="margin-left: 10rpx; position: relative; left: 86rpx; top: 32rpx; width: 600rpx; height: 80rpx; display: block; box-sizing: border-box">
+      {{currentFood.Food[0].name}}</view>-->
+    <view class="f-b"
+      style="margin-left: 40rpx; margin-top: 20rpx; position: relative; left: -4rpx; top: 17rpx; width: 266rpx; height: 35rpx; font-size: 36rpx; display: block; box-sizing: border-box">
+      {{currentFood.data.price}}元</view>
+      <!--<view class="f-b"
+      style="margin-left: 40rpx; margin-top: 20px; position: relative; left: 144rpx; top: 18rpx; width: 204rpx; height: 75rpx; display: block">
+      价格：{{currentFood.Food[0].price}}</view>-->
+      <!--  <view class="f-c"
+      style="position: relative; left: -314rpx; top: 132rpx; width: 700rpx; height: 80rpx; display: flex">
+      {{currentFood.store[0].name}}</view>-->
+    <view class="f-c"
+    style="position: relative; line-height: 70rpx; left: -440rpx; top: 120rpx; width: 700rpx; height: 70rpx; display: flex; font-size: 30rpx">
+      {{currentFood.store[0].name}}</view></view>
+  <view bindtap='onLike'
+    style="width: 72rpx; height: 99rpx; display: block; box-sizing: border-box; position: relative; left: 600rpx; top: -144rpx">
+    <!-- <view bindtap='onLike'
+    style="width: 127rpx; height: 99rpx; display: block; box-sizing: border-box; position: relative; left: 549rpx; top: -124rpx">-->
+    <image src="{{like?icon_unlike:icon_like}}" class="pickimg" animation="{{animation}}"
+      style="width: 91rpx; height: 79rpx; display: inline-block; box-sizing: border-box; position: relative; left: 36rpx; top: 0rpx">
+    </image>
+  </view>
+</view>
+<!--<view class="sec"
+  style="background-color: white; width: 708rpx; height: 554rpx; display: block; box-sizing: border-box; position: relative; left: 18rpx; top: 0rpx">
+  <view class="s-c"
+    style="width: 368rpx; height: 70rpx; display: flex; box-sizing: border-box; position: relative; left: 57rpx; top: 24rpx">
+    评分</view>
+  <view class="s-a"
+    style="width: 100rpx; height: 81rpx; display: flex; box-sizing: border-box; position: relative; left: -20rpx; top: 272rpx">
+    {{ value }}</view>
+  <van-rate
+    style="width: 368rpx; height: 70rpx; display: block; box-sizing: border-box; position: relative; left: -4rpx; top: 268rpx"
+    value="{{ value }}" size="{{ 25 }}" color="#ffd21e" void-icon="star" void-color="#999" bind:change="onChange" />
+  <view class="s-e"
+    style="width: 322rpx; height: 49rpx; display: flex; box-sizing: border-box; position: relative; left: -18rpx; top: 61rpx">
+    已有13人评分</view>
+  <view
+    style="width: 247rpx; height: 702rpx; display: block; box-sizing: border-box; position: relative; left: -65rpx; top: 11rpx">
+    <image class="s-f" src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221115222523708-878771435.png'
+      style="position: relative; left: 172rpx; top: -371rpx; width: 237rpx; height: 225rpx; display: inline-block; box-sizing: border-box">
+    </image>
+  </view>
+  <van-progress style="position: relative; left: 368rpx; top: -1000rpx" color="rgb(248, 197, 152)" percentage="25"
+    stroke-width="8" />
+  <van-progress style="position: relative; left: 368rpx; top: -1066rpx" color="rgb(248, 197, 152)" percentage="35"
+    stroke-width="8" />
+  <van-progress style="position: relative; left: 368rpx; top: -939rpx" color="rgb(248, 197, 152)" percentage="25"
+    stroke-width="8" />
+  <van-progress style="position: relative; left: 368rpx; top: -1003rpx" color="rgb(248, 197, 152)" percentage="15"
+    stroke-width="8" />
+  <van-progress style="position: relative; left: 368rpx; top: -932rpx" color="rgb(248, 197, 152)" percentage="5"
+    stroke-width="8" />
+</view>-->
+<view class="sec"
+  style="background-color: white; width: 708rpx; height: 554rpx; display: block; box-sizing: border-box; position: relative; left: 18rpx; top: 0rpx">
+  <view class="s-c"
+    style="width: 368rpx; height: 70rpx; display: flex; box-sizing: border-box; position: relative; left: 57rpx; top: 24rpx">
+    评分</view>
+  <view class="s-a"
+    style="width: 100rpx; height: 81rpx; display: flex; box-sizing: border-box; position: relative; left: 128rpx; top: 281rpx">
+    {{ value }}</view>
+  <van-rate
+    style="width: 368rpx; height: 70rpx; display: block; box-sizing: border-box; position: relative; left: 167rpx; top: 261rpx"
+    value="{{ value }}" size="{{ 20 }}" color="#F5C27F" void-icon="star" void-color="#999" bind:change="onChange" />
+  <view class="s-e"
+    style="width: 322rpx; font-size: 30rpx; height: 49rpx; display: flex; box-sizing: border-box; position: relative; left: -18rpx; top: 51rpx">
+    已有{{allcount}}人评分</view>
+  <view
+    style="width: 247rpx; height: 702rpx; display: block; box-sizing: border-box; position: relative; left: -155rpx; top:-10rpx">
+    <image class="s-f" src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221115222523708-878771435.png'
+      style="position: relative; left: 193rpx; top: -364rpx; width: 237rpx; height: 225rpx; display: inline-block; box-sizing: border-box">
+    </image>
+  </view>
+  <van-progress style=" position: relative; left: 300rpx; top: -1020rpx" color="rgb(248, 197, 152)" percentage="{{num4}}"
+    stroke-width="9" />
+  <van-progress style="position: relative; left: 300rpx; top: -1077rpx" color="rgb(248, 197, 152)" percentage="{{num5}}"
+    stroke-width="9" />
+  <van-progress style="position: relative; left: 300rpx; top: -959rpx" color="rgb(248, 197, 152)" percentage="{{num2}}"
+    stroke-width="9" />
+  <van-progress style="position: relative; left: 300rpx; top: -1023rpx" color="rgb(248, 197, 152)" percentage="{{num3}}"
+    stroke-width="9" />
+  <van-progress style="position: relative; left: 300rpx; top: -952rpx" color="rgb(248, 197, 152)" percentage="{{num1}}"
+    stroke-width="9" />
+</view>
+<view class="kuang"
+  style="width: 749rpx; height: 100rpx; display: flex; box-sizing: border-box; position: relative; left: 3rpx; top: 0rpx">
+  <view class="list_root">
+    <view wx:for="{{tagArr}}" bindtap="addTag" data-item="{{item}}" class="list_item">
+      {{item.name}}({{item.num}})</view>
+  </view>
+
+  <!-- <view class="liangda" style="position: relative; left: -89rpx; top: -15rpx">量大</view>
+  <view class="haochi" style="position: relative; left: 74rpx; top: -66rpx">好吃</view>
+  <view class="xian" style="position: relative; left: 235rpx; top: -117rpx">偏咸</view> -->
+</view>
+<button class="weui-btn" form-type='submit' plain='true'
+  style="position: relative; left: -3rpx; top: 0rpx; width: 189rpx; height: 100rpx; display: block"
+  bindtap='showButton'>
+  <image src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221114162654057-1483570770.png' mode='widthFix'
+    style="position: relative; left: 0rpx; top: -19rpx; width: 91rpx; height: 166rpx; display: inline-block; box-sizing: border-box">
+  </image>
+</button>
+<!-- <view class="tianjia {{showView?'hide':'show'}}" -->
+<view class="tianjia" wx:if="{{!showView}}"
+  style="width: 652rpx; height: 383rpx; box-sizing: border-box; position: relative; left: 59rpx; top: 33rpx; display: block">
+  <view class="z"
+    style="width: 160rpx; height: 60rpx; display: block; box-sizing: border-box; position: relative; left: 257rpx; top: 25rpx">
+    添加标签</view>
+  <view class="dislike" catchtap="onTapDislike">
+    <!-- <button class="weui" form-type='submit' plain='true'
+      style="position: relative; left: 237rpx; top: -47rpx; width: 136rpx; height: 90rpx; display: block; box-sizing: border-box"
+      bindtap='hideButton'>-->
+    <button class="weui" form-type='submit' plain='true'
+      style="position: relative; left: 237rpx; top: -57rpx; width: 256rpx; height:90rpx; display: block; box-sizing: border-box"
+      bindtap='hideButton'>
+      <!--<image src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221114162647665-264690331.png'
+        mode='widthFix'
+        style="width: 60rpx; height: 60rpx; display: inline-block; box-sizing: border-box; left: 12rpx; top: 10rpx">
+      </image>-->
+      <image src='https://img2022.cnblogs.com/blog/2580100/202211/2580100-20221114162647665-264690331.png'
+        
+        style="width: 56rpx; height: 60rpx; left: 32rpx; top: 10rpx">
+      </image>
+    </button>
+  </view>
+  <view style="margin-top: -30rpx;" class="list_root">
+    <view wx:for="{{list}}" bindtap="addTag" data-item="{{item}}" class="list_item">
+      {{item.name}}</view>
+  </view>
+</view>
+<view class="select_calculator" bindtap="next_calculator"
+  style="position: relative; left: 83rpx; top: 101rpx; width: 506rpx; height: 100rpx; display: block; box-sizing: border-box">
+  <!-- <van-button
+    style="  background-color:#F5C27F ; color:#F5C27F; width: 300rpx; height: 116rpx; display: block; box-sizing: border-box; position: relative; left: 103rpx; top: -66rpx"
+    van-button plain type="primary" size="large">
+    <van-icon color="#F5C27F" name="star" size="20px" />评分
+  </van-button>-->
+  <button
+    style=" background-color: white; border-color:#BBBBBB;   color:#585858; width: 300rpx; height: 100rpx; display: block; box-sizing: border-box; position: relative; left: 45rpx; top: -36rpx"
+    van-button plain type="primary" size="large">
+    <van-icon color="#F5C27F" name="star" size="20px" />评分
+  </button>
+</view>

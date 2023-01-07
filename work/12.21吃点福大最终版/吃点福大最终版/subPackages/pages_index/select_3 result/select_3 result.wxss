@@ -1,0 +1,16 @@
+/* pages/index/select_3/select_3 result/select_3 result.wxss */
+.button {
+  position: fixed;
+  bottom: 90rpx;
+  left: 0;
+  right: 0;
+  text-align: center; 
+  color: rgb(70, 69, 69);
+  width: 90%; 
+  font-size: 36rpx;
+ background-color: rgb(233, 176, 128);
+
+}
+.button.button-hover { /*按钮按压效果*/
+  background-color: #BC955E;
+}
